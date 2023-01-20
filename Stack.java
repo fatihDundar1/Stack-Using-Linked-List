@@ -19,7 +19,12 @@ public class Stack {
 		}
 		
 	}
-	
+	static boolean isEmpty() {
+		if(head==null) {
+	           return true;}
+		
+		return false;
+	}
 	
 	static void push(int data) {
 		
@@ -44,21 +49,33 @@ public class Stack {
 		}
 	}
 	
+	
+	static int size() {
+                StackNode pnode=head;
+                int i=0;		
+		while(pnode!=null) {
+			i++;
+			pnode=pnode.next;
+		}
+		return i;
+	}
+	
 	static void top() {
 		System.out.println(head.data);
 	}
 	
 	public static void main(String[] args) {
 	
+		 System.out.println(isEmpty());
 		push(3);
+		System.out.println(isEmpty());
 		push(2);
 		push(1);
-		top();
+		System.out.println("size: "+size());
 		pop();
 		top();
 		System.out.println("-------");
 		print();
-	
 		
 		
 	
